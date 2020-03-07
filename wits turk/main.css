@@ -1,0 +1,60 @@
+*{
+margin: 0;
+padding: 0;
+font-family: san-serif;
+}
+.container{
+width : 100%;
+height : 100%;
+background-image:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)),url(machinelearning.jpg);
+backgroung-position:center;
+background-size:cover;
+position:absolute
+}
+.menu ul{
+display: inline-flex;
+margin: 50px
+}
+.menu ul li{
+list-style: none;
+margin : 0 20px;
+color : #b2b1b1;
+cursor: pointer;
+}
+.logo img {
+width: 30px;
+margin-center: -7px;
+margin-center:40px
+}
+.signup-btn {
+top:40px;
+right:80px;
+position:absolute;
+text-decoration:none;
+color:red;
+}
+.banner{
+width:80%;
+height:70%
+top:25%
+left:130px
+position:absolute;
+color:pink;
+}
+.app-text{
+width:50%;
+float:left;
+}
+.app-text h1{
+font-size:43px;
+width:500px;
+position : relative;
+margin: right;
+}
+.app-text p{
+width:650px;
+font-size:45px;
+margin:30px 0 30px 40px;
+line-height:26px;
+color:#919191;
+}
