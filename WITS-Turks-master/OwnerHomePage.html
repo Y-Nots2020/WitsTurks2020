@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WELCOME PROJECT OWNER</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.14.0/firebase-firestore.js"></script>
+    <script src="form.js"></script>
+    <script src="view.js"></script>
+</head>
+<body>
+    <header>
+        <div class="main">
+            <ul>
+                <li><a href="#" action="signin.html">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#" onclick="signOut()">Logout</a></li>
+
+            </ul>
+        </div>
+            <div class="title">
+                <h1 style="color:#2B1B17">WELCOME PROJECT OWNER</h1>
+        </div>
+        </header>
+        <div class="button">
+            <a href="#" class="btn">CREATE NEW PROJECT</a>
+            <a href="#" class="btn">VIEW PROJECTS</a>
+        </div>
+        <button type="submit" onclick="signOut()">Log off</button>
+        <button type="submit" onclick="location.href='OwnerUpload.html';">Create new project</button>
+        <br>
+        <img id="myImgId" src="" height="625" width="450"/>
+
+</body>
+</html>
