@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>PO Navigation Bar</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(".hamburger").click(function(){
+			  $(".wrapper").toggleClass("active")
+			})
+		});
+	</script>
+
+	<!--4
+	Added the viewController js
+	-->
+	<script src="ViewController.js"></script>
+</head>
+<body>
+
+<div class="wrapper">
+
+	<div class="top_navbar">
+		<div class="logo">
+			<!--<a href="#">put profile of person</a>-->
+            <a href="#">
+                <span class="icon"><i class="fas fa-user"></i></span>
+                <span>vanda22</span>
+                <div class="sub-menu-1">
+                </div>
+            </a>
+		</div>
+		<div class="top_menu">
+			<div  class="home_link">
+				<a id="createProjects" href="#">
+					<span class="icon"><i class="fas fa-folder"></i></span>
+					<span>create project</span>
+				</a>
+			</div>
+			<div class="right_info">
+				<div class="icon_wrap">
+					<div class="icon">
+						<i class="fas fa-bell"></i>
+					</div>
+				</div>
+				<div class="icon_wrap">
+					<div class="icon">
+						<i class="fas fa-cog"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="main_body">
+
+		<div class="sidebar_menu">
+	        <div class="inner__sidebar_menu">
+
+                <ul>
+				<!--0
+				The first thing I'm gonna do is give an id to your <li> tags
+				This will allow me to know which <li> tag is pressed
+				-->
+                    <li id="profile"> <!--added profile as id-->
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-address-card"></i></span>
+                            <span class="list">profile</span>
+                        </a>
+                    </li>
+                    <li id="viewProjects"> <!--added viewProjects as id-->
+                        <a href="#">
+                            <span class="icon"><i class="fas fa-folder"></i></span>
+                            <span class="list">view projects</span>
+                        </a>
+                    </li>
+                    <li id="completedProject"><!--added completedProject as id-->
+                        <a href="#">
+                            <span class="icon"><i class="fab fa-chart-pie"></i></span>
+                            <span class="list">complete Projects</span>
+                        </a>
+                    </li>
+                </ul>
+
+		        <div class="hamburger">
+			        <div class="inner_hamburger">
+			            <span class="arrow">
+			                <i class="fas fa-long-arrow-alt-left"></i>
+			                <i class="fas fa-long-arrow-alt-right"></i>
+			            </span>
+			        </div>
+			    </div>
+
+	        </div>
+	    </div>
+		<!--1
+		Go to style.css and see the changes I made there-->
+
+		<!--2
+		I'm going to make multiple copies of the container div
+		treat div container as a page or activity you want to display
+		then ill give each div an id
+		-->
+	    <div id="profileDiv" class="container">
+	    	<div class="item_wrap">
+	    		<div class="item">made the right choice to join us this time your help is much appreciated. Labelling these projects will fun but some of them wont be easy to work with.best of luck to you enjoy</div>
+	    	</div>
+	    </div>
+
+		<div id="projectsDiv" class="container">
+	    	<div class="item_wrap">
+	    		<div class="item">This is the view projects</div>
+	    	</div>
+	    </div>
+
+		<div id="completedProjectsDiv" class="container">
+	    	<div class="item_wrap">
+	    		<div class="item">This is the completed projects div</div>
+	    	</div>
+	    </div>
+
+        <div id="createProjectsDiv" class="container">
+            <div class="item_wrap">
+                <!--3<div class="item">This is the create projects div</div>-->
+                <form action="POST"  method="upload.php"  enctype="multipart/form-data">
+                    <!-- <input type="file" name="file" /><br><br>
+                    <button type="submit" name="submit" >UPLOAD</button> -->
+										<input type="button" onclick="location.href='OwnerHomePage.html';" value="Go to projects" />
+            </div>
+        </div>
+
+		<!--3
+		Next thing, I'm gonna use jquery to display the divs
+		I'll create a ViewController.js
+		Then I'll attach it to this webpage
+		@ the beginning of this webpage under the script tags
+		-->
+	</div>
+</div>
+
+
+</body>
+</html>

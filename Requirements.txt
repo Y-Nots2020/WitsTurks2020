@@ -1,0 +1,9 @@
+1. Multiple images at once
+----to do-------
+
+4. Join projects
+group by common name
+
+5. See completed projects
+---get project from CompletedProjects
+
