@@ -12,6 +12,6 @@
 ## Installation
 On Linux
 ```bash
-$ git clone 
-$ cd Wits
+$ git clone https://github.com/Y-Nots2020/WitsTurks2020.git
+$ cd WitsTurks2020
 ```
