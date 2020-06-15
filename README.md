@@ -1,5 +1,7 @@
 # WitsTurks2020
 
+WitsTurks is a website that is used by labelers which are users and project owners which are project creators.When doing machine learning getting data for labels is often expensive, time consuming and dffcult but WITS TURKS you will be able to distribute it to as many people as possible so that people can do it for you. A user will be able to login to the website allowing them to create projects or label already create projects(with different types of labels)and the system will capture all that. With this users will spend less time trying to get data for labels.
+
 ![logo](Img/ynots.jpg)
 |Release|Build        |Test    |
 |-------|-------------|-------:|
