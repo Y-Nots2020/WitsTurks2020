@@ -24,66 +24,80 @@ var storageRef = storage.ref();
 // Create a child reference
 var imagesRef = storageRef.child('images');
 
-function uploadImage() {
-      const ref = firebase.storage().ref();
-      const file = document.querySelector("#photo").files[0];
-      const name = +new Date() + "-" + file.name;
-      const metadata = {
-        contentType: file.type
-      };
-      const task = ref.child(name).put(file, metadata);
-      task
-        .then(snapshot => snapshot.ref.getDownloadURL())
-        .then(url => {
-          console.log(url);
-          document.querySelector("#image").src = url;
-          Img_url = url;
-        })
-        .catch(console.error);
-    }
+// function uploadImage()
+// {
+//       const ref = firebase.storage().ref();
+//       const file = document.querySelector("#photo").files[0];
+//       const name = +new Date() + "-" + file.name;
+//       const metadata = {
+//         contentType: file.type
+//       };
+//       const task = ref.child(name).put(file, metadata);
+//       task
+//         .then(snapshot => snapshot.ref.getDownloadURL())
+//         .then(url => {
+//           console.log(url);
+//           document.querySelector("#image").src = url;
+//           Img_url = url;
+//         })
+//         .catch(console.error);
+//         alert("File uploaded, select another image to upload or go back to the projects");
+// }
 
-function writeUserData(userId, name, email, type) {
+function writeUserData(userId, email, type) {
     firebase.database().ref('users/' + userId).set({
-        username: name,
         email: email,
         type: type
     });
 }
-
-function UpdateInfo() {
-    var label = "";
-    if (document.getElementById("owner").checked == true)
-        label = "owner";
-    else if (document.getElementById("labeler").checked == true)
-        label = "labeler";
-    else
-        alert("Please select account type")
-    var userId = firebase.auth().currentUser.uid;
-    var ref = database.ref('users/');
+function addUser(userId, email, a_type) {
+    firebase.database().ref('users/' + userId).set({
+        username: name,
+        email: email,
+        accountType:a_type
+    });
 }
 
-
 function SignUp() {
-    var email = document.getElementById("semail");
-    var password = document.getElementById("spassword");
+    var email = document.getElementById("semail").value;
+    var password = document.getElementById("spassword").value;
+    var ele = document.getElementsByName('acc_type');
     var label = "";
-    if (document.getElementById("owner").checked == true)
-        label = "owner";
-    else if (document.getElementById("labeler").checked == true)
-        label = "labeler";
-    else
+    for(i = 0; i < ele.length; i++) {
+        if(ele[i].checked)
+        label = ele[i].value;
+    }
+    // var label = "";
+    // if (document.getElementById("owner").checked == true)
+    //     label = "owner";
+    // else if (document.getElementById("labeler").checked == true)
+    //     label = "labeler";
+    // else
+    //     alert("Please select account type")
+    // document.write(email);
+    if (label == "labeler" || label == "owner")
+    {
+        const promise = auth.createUserWithEmailAndPassword(email, password);
+        promise.catch(e => alert(e.message));
+        alert(email);
+        alert(password);
+        auth.onAuthStateChanged(function(user) {
+            alert(label);
+            if (user)
+            {
+                var userId = firebase.auth().currentUser.uid;
+                var ref = database.ref('users/');
+                alert(userId);
+                addUser(userId, email, label);
+                if (label=="owner") {
+                  window.location.href = 'projectownerindex.html'
+                }
+                ////else sign in as labeler
+            }
+          });
+    }else{
         alert("Please select account type")
-    document.write(email);
-    const promise = auth.createUserWithEmailAndPassword(email.value, password.value);
-    promise.catch(e => alert(e.message));
-    auth.onAuthStateChanged(function(user) {
-      if (user){
-        if (label=="owner") {
-          window.location.href = 'projectownerindex.html'
-        }
-        ////else sign in as labeler
-      }
-    });
+    }
 
 }
 
@@ -94,7 +108,6 @@ function signIn() {
 
     var password = document.getElementById("password");
 
-    document.write(email);
     const promise = auth.signInWithEmailAndPassword(email.value, password.value);
     promise.catch(e => alert(e.message));
     auth.onAuthStateChanged(function(user) {

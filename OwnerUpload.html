@@ -9,7 +9,7 @@
           align-items: center;
           justify-content: center;
           flex-direction: column;
-          background-color: #EDDA74;
+          background-color: #0084a3;
         }
         #uploader{
           -webkit-appearance: none;
@@ -96,6 +96,7 @@
           firebase.database().ref('Images/' + proj).set({
               url: name,
           });
+          alert("File uploaded, select another image to upload or go back to the projects");
       }
 
   const video = document.getElementById('video');

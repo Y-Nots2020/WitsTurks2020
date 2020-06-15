@@ -1,56 +1,62 @@
 ﻿<!DOCTYPE html>
 
 <html>
-<head>
+	<head>
+		<title>REGISTRATION</title>
+		<link rel="stylesheet" type="text/css" href="looks.css">
+		<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase.js"></script>
 
-    <title>login and registarion form design</title>
-    <link rel="stylesheet" href="main.css">
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase.js"></script>
+		<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+		<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
 
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
-
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
-
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
-
-    <script src="form.js"></script>
-</head>
+		<!-- Add Firebase products that you want to use -->
+		<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+		<script defer src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-database.js"></script>
+		<script src="form.js"></script>
+	</head>
+	
 <body>
-    <div class="container">
+    <div class="container-wrap">
+		<div class="title">
+			<h1 class="heading">REGISTRATION</h1>
+		</div>
         <div class="menu">
-            <ul>
-                <li>home</li>
-                <li>services</li>
-                <li>about</li>
-            </ul>
-        </div>
-        </div>
-        <div class="login-page">
-            <div class="form">
-                <form class="register-form">
-                    <h1>Choose user type</h1>
-                    <div class="radio-container">
-                        <p>Please select your account type:</p>    
-                        <input type="radio" id="owner" name="label" value="owner">
-                        <label for="owner">Project Owner</label><br>
-                        <input type="radio" id="labeler" name="label" value="Labeler">
-                        <label for="labeler">Labeler</label><br>
-                    </div>
-                    <!-- <input type="text" class="input-field" placeholder="name" id="name"> -->
-                    <input type="email" class="input-field" placeholder="email" id="email">
-                    <input type="password" class="input-field" placeholder="password" id="password"> 
-                    <!-- <input type="text" placeholder="confirm password" /> -->
-
-                    <button onclick="signUp()" id="signUp">Sign Up</button>
-                    <input type="checkbox" class=" chech-box"><span>I agree to the Terms and Conditions</span>
-                    <p class=" message">Already Registered?<a href="Login.html">login</a></p>
-                </form>
-
-            </div>
-        </div>
+		  <ul>
+			  <li><a href="#" action="signin.html">Home</a></li>
+			  <li><a href="#">Services</a></li>
+			  <li><a href="#">About</a></li>
+		  </ul>
+		</div>
+		<section class="center">
+			<div class="project-menu">
+				<div class="login-page">
+					<div style="border: 1px solid #0084a3; border-radius: 10px; padding: 10px;" class="form">
+						<form class="register-form">
+							<div class="menu">
+								<h1>Choose user type</h1>
+								<ul>
+									<li><input type="radio" id="owner" name="label" value="owner"><label for="owner">Project Owner</label></li>
+									<li><input type="radio" id="labeler" name="label" value="Labeler"><label for="labeler">Labeler</label></li>
+								</ul>
+							</div>
+							<div class="input-wrap">
+								<input type="email" placeholder="email" id="email"> 
+								<input type="password" placeholder="password" id="password"> 
+							</div>
+							<button class="buttons" onclick="signUp()" id="signUp">Sign Up</button>
+							<br>
+							<input type="checkbox" class=" chech-box"><span>I agree to the Terms and Conditions</span>
+							<p class=" message">Already Registered?<a href="Login.html">login</a></p>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<footer>
+		<p>Copyright &copy; <a href="#/">Xolani Maseko</a></p>
+	</footer>
 </body>
 </html>

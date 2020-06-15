@@ -1,38 +1,39 @@
 ﻿<!DOCTYPE html>
-
 <html>
-<head>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<title>RESET PASSWORD</title>
+		<link rel="stylesheet" href="looks.css">
+		<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+		<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
 
-    <title>login and registarion form design</title>
-    <link rel="stylesheet" href="main.css">
-    
-    <link rel="stylesheet" href="style.css">
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-app.js"></script>
+		<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+		<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
 
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-analytics.js"></script>
+		<!-- Add Firebase products that you want to use -->
+		<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
+		<script defer src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
 
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
-    <script defer src="https://www.gstatic.com/firebasejs/7.11.0/firebase-firestore.js"></script>
-
-    // ...
-
-    <script defer src="./init-firebase.js"></script>
-    <script src="form.js"></script>
-</head>
+		<script defer src="./init-firebase.js"></script>
+		<script src="form.js"></script>
+	</head>
+	
 <body>
-    <div class="login-page">
-        <div class="form">
-            <form class="login-form">
-                <input type="password" placeholder="password" />
-                <input type="password" placeholder="confirm password" />
-                <button>reset</button>
-                <p class=" message">Go back<a href="Login.html">login</a></p>
-                <p class=" message">Don't have an account?<a href="Registration.html">login</a></p>
-            </form>
+    <div class="container-wrap">
+		<h2 class="heading">RESET PASSWORD</h2>
+        <div class="center">
+			<div style="border: 1px solid #0084a3; border-radius: 10px; padding: 10px;">
+				<form class="">
+					<input type="password" placeholder="password" />
+					<input type="password" placeholder="confirm password" />
+					<button>reset</button>
+					<p class="message">Go back<a href="Login.html"> login</a></p>
+					<p class="message">Don't have an account?<a href="Registration.html"> Register</a></p>
+				</form>
+			</div>
         </div>
     </div>
 </body>

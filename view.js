@@ -2,6 +2,7 @@
 var storage = firebase.storage();
 var storageRef = storage.ref();
 var rootRef = firebase.database().ref().child('Images');
+var rootRef = firebase.database().ref().child('CompletedProjects');
 console.log(rootRef);
 var myList = new Array();
 // myList.push("ds")
@@ -11,15 +12,16 @@ var count = 0;
 var userID = ""
 var fbRef = firebase.database().ref().child("users");
 var imageRef = firebase.database().ref().child("Images");
+var imageRef = firebase.database().ref().child("CompletedProjects");
 
 firebase.auth().onAuthStateChanged(function(user) {
     if (user) {
         console.log(user);
         var user = firebase.auth().currentUser.uid;
         userID = user;
-        // alert(user);    //you should have your user here!
+        alert(user);    //you should have your user here!
     } else {
-        console.log('No user is signed in.');
+        alert('No user is signed in.');
     }
 });
 
@@ -29,6 +31,14 @@ imageRef.on("child_added", snap => {
     var name = snap.child("url").val();
     myList.push(name);
 });
+
+imageRef.on("child_added", snap => {
+  var key=snap.key;
+  // alert(myList.length);
+  var name = snap.child("label").val();
+  myList.push(name);
+});
+
 
 
 storageRef.child('dog.jpg').getDownloadURL().then(function(url) {
@@ -55,8 +65,9 @@ function nextImg(){
         // Or inserted into an <img> element:
         var img = document.getElementById('myImgId');
         img.src = url;
-        firebase.database().ref('completedProjects/' + userID).set({
-            label: str_label
+        firebase.database().ref('completedProjects/' + userID + "/"+count).set({
+            label: str_label,
+            link: url
         });
       }).catch(function(error) {
         // Handle any errors
